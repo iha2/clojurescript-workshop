@@ -15,7 +15,7 @@
 
         :modules
         {:main ;; <- becomes public/js/main.js
-         {:entries [starter.browser]}}
+         {:entries [main.browser]}}
 
         ;; start a development http server on http://localhost:8020
         ;; enter into (shadow.cljs.devtools.api/nrepl-select :app) proto-repl to connect to shadow-cljs server
