@@ -1,0 +1,24 @@
+;; shadow-cljs configuration
+{:source-paths
+ ["src"]
+
+ :dependencies
+ [[reagent "0.8.1"]
+  [proto-repl "0.3.1"]
+  [proto-repl-charts  "0.3.2"]
+  [org.clojure/core.async "0.4.474"]]
+
+ :builds
+ {:app {:target :browser
+        :output-dir "public/js"
+        :asset-path "/js"
+
+        :modules
+        {:main ;; <- becomes public/js/main.js
+         {:entries [starter.browser]}}
+
+        ;; start a development http server on http://localhost:8020
+        ;; enter into (shadow.cljs.devtools.api/nrepl-select :app) proto-repl to connect to shadow-cljs server
+        :devtools
+        {:http-root "public"
+         :http-port 8020}}}}
