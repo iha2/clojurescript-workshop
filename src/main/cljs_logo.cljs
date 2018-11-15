@@ -23,8 +23,7 @@
                 :height "10%"
                 :width "10%"}]]))
 
-(defn cljs-logo []
-  (rotatable-logo @logo-angle-state))
+(def cljs-logo (rotatable-logo @logo-angle-state))
 
 (defn animate-logo [] 
   (start-rotation))
