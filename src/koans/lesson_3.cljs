@@ -6,7 +6,7 @@
 (= {:a 1 :b 2} (:__ :a 1 :b 2))
 
 ;; But a value must be supplied for each key
-(= {:a 1} (hash-map :a 1))
+(= :__ (hash-map :a 1))
 
 ;; The size is the number of entries
 (= :__ (count {:a 1 :b 2}))
