@@ -5,7 +5,7 @@
 ;; Anything is quotes also acts like a function. Go through these
 ;; and use the functions to predict what the outcomes should be.
 
-;; Lists
+;; LISTS
 ;; You can create a 'list' with a function or with syntactic sugar
 (= '() (__ 1 2 3 4 5))
 
@@ -31,7 +31,7 @@
 
 ;; Speaking of vectors...
 
-;; Vectors
+;; VECTORS
 
 ;; You can use vectors in clojure as array-like structures
 (= __ (count [42]))
@@ -68,3 +68,21 @@
 
 ;; but cons cannot
 (cons 67 76 (1 2 3 4 6))
+
+
+;; SETS
+;; clojure(Script) sets have this structure #{3 5 6 7 8 5 3 2}
+;; You can create a 'set' from another collection"
+(= __ (__ '(1 2 3 4 5))
+
+;; Remember that 'set' is mathematical
+(= __ (__ '(1 1 2 2 3 3 4 4 5 5)))
+
+;; You can ask clojure for the union of two sets
+(= __ (clojure.set/union #{1 2 3 4} #{2 3 5}))
+
+;; And also the intersection
+(= __ (clojure.set/intersection #{1 2 3 4} #{2 3 5}))
+
+;; But don't forget about the difference
+(= __ (clojure.set/difference #{1 2 3 4 5} #{2 3 5}))
