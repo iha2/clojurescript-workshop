@@ -7,10 +7,10 @@
 
 ;; Lists
 ;; You can create a 'list' with a function or with syntactic sugar
-(= '() (list 1 2 3 4 5))
+(= '() (__ 1 2 3 4 5))
 
 ;; They behave like proper list so you should only access the 'first' in the sequence
-(= _ (first '(1 2 3 4 5)))
+(= _ (__ '(1 2 3 4 5)))
 ;
 
 ;; You can get the 'rest' of the the list
@@ -20,14 +20,14 @@
 (= __ (__ '(1 2 3)))
 
 ;; When there `rest` is called on a single value, it only returns he base case
-(= '() (rest '(100)))
+(= '() (__ '(100)))
 
-;; cons, short for construct, adds an element to the front of list
-(= __ (cons :a '(:b :c :d :e)))
+;; 'cons', short for construct, adds an element to the front of list
+(= __ (__ :a '(:b :c :d :e)))
 
 
 ;; conj is similar to cons but works for both lists and vectors
-(= __ (conj '(:b :c :d :e) :a))
+(= __ (__ '(:b :c :d :e) :a))
 
 ;; Speaking of vectors...
 
@@ -56,7 +56,7 @@
 (nth [:peanut :butter :and :jelly] 25)
 
 ;; You can slice vectors just like you can arrays
-(= __ (subvec [:peanut :butter :and :jelly] 1 3))
+(= [:butter :and] (subvec [:peanut :butter :and :jelly] _ _))
 
 ;; Equalty in collections in done by value, independant of the type of collection
 ;; Therefore an equality check is an O(n) operation
