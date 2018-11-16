@@ -5,7 +5,7 @@
 ;; quality is simply another variadic function
 (= (+ 3 4) 7 (+ _ 5))
 
-;; = is === in javascript
+;; = is the same as == in javascript
 (= _ (= 2 2.0))
 
 ;; == is a looser equality ( it means the same in js)
