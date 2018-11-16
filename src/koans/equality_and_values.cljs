@@ -8,8 +8,8 @@
 ;; = is the same as == in javascript
 (= _ (= 2 2.0))
 
-;; == is a looser equality ( it means the same in js)
-(= _ (== 2.0 2))
+;; But it does not have the loose equality of javascript
+(= _ (= "2" 2.0))
 
 ;; nil is null and undefined
 (= (= true nil) _)
