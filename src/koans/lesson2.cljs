@@ -73,7 +73,7 @@
 ;; SETS
 ;; clojure(Script) sets have this structure #{3 5 6 7 8 5 3 2}
 ;; You can create a 'set' from another collection"
-(= __ (__ '(1 2 3 4 5))
+(= __ (__ '(1 2 3 4 5)))
 
 ;; Remember that 'set' is mathematical
 (= __ (__ '(1 1 2 2 3 3 4 4 5 5)))
