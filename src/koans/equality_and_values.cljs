@@ -8,8 +8,8 @@
 ;; = is the same as == in javascript
 (= _ (= 2 2.0))
 
-;; == is a looser equality ( it means the same in js)
-(= _ (== 2.0 2))
+;; But it does not have the loose equality of javascript
+(= _ (= "2" 2.0))
 
 ;; nil is null and undefined
 (= (= true nil) _)
@@ -33,7 +33,7 @@
 ;; What could be equivalent to nothing? (like a real language)
 (= _ nil)
 
-"When things cannot be equal, they must be different"
+;; When things cannot be equal, they must be different
 (not= :fill-in-the-blank :aaa)
 
 
