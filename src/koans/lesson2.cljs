@@ -68,3 +68,20 @@
 
 ;; but cons cannot
 (cons 67 76 (1 2 3 4 6))
+
+;; SETS
+;; clojure(Script) sets have this structure #{3 5 6 7 8 5 3 2}
+;; You can create a 'set' from another collection"
+(= #{1 2 3 4 5} (set '(1 2 3 4 5)))
+
+;; Remember that 'set' is mathematical
+(= #{1 2 3 4 5} (set '(1 1 2 2 3 3 4 4 5 5)))
+
+;; You can ask clojure for the union of two sets
+(= #{1 2 3 4 5} (clojure.set/union #{1 2 3 4} #{2 3 5}))
+
+;; And also the intersection
+(= #{2 3} (clojure.set/intersection #{1 2 3 4} #{2 3 5}))
+
+;; But don't forget about the difference
+(= #{1 4 } (clojure.set/difference #{1 2 3 4 5} #{2 3 5}))
