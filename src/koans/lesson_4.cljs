@@ -21,13 +21,15 @@
 
 ;; Recursion: Loop & Recur
 
-;; This is an example of a for loop using the loop and recur
+;; This is an example of a simple for loop using the loop and recur
 ;; For loop
 (defn for-loop [function count]
-  (loop [iterator loop-state]
-    (if (= loop-state 0)
+  (loop [iterator count]
+    (if (= iterator 0)
       nil
-      (recur (dec loop-state)))))
+      (do
+        (function)
+        (recur (dec iterator))))))
 
 ;; impliment a map higher order function. Use the functions 'first', 'rest' and 'empty?'
   
