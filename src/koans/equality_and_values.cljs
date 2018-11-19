@@ -1,37 +1,37 @@
 (ns koans.values)
 
-(= _ true)
+(= :__ true)
 
 ;; quality is simply another variadic function
-(= (+ 3 4) 7 (+ _ 5))
+(= (+ 3 4) 7 (+ :__ 5))
 
 ;; = is the same as == in javascript
-(= _ (= 2 2.0))
+(= :__ (= 2 2.0))
 
 ;; But it does not have the loose equality of javascript
-(= _ (= "2" 2.0))
+(= :__ (= "2" 2.0))
 
 ;; nil is null and undefined
-(= (= true nil) _)
+(= (= true nil) :__)
 
 ;; however, nil is not truthy
-(= (= false nil) _)
+(= (= false nil) :__)
 
 
 
 ;; --- Strings, Keywords, Symbols" --- ;;
 
 ;; However they are not the same thing
-(= _ (= "hello" :hello 'hello))
+(= :__ (= "hello" :hello 'hello))
 
 ;;  Make a keyword with your keyboard
-(= _ (keyword "hello"))
+(= :__ (keyword "hello"))
 
 ;; Symbolism is all around us
-(= _ (symbol "hello"))
+(= :__ (symbol "hello"))
 
 ;; What could be equivalent to nothing? (like a real language)
-(= _ nil)
+(= :__ nil)
 
 "When things cannot be equal, they must be different"
 (not= :fill-in-the-blank :aaa)
