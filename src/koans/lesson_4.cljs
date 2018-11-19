@@ -47,7 +47,7 @@
   (loop [collection map-collection
          result '()]
     (let [lambda-result :__]
-      (cond (:__ collection) result
+      (cond (:__ collection) :__
             lambda-result (recur :__ :__)
             :else (recur :__ :__)))
     ))
