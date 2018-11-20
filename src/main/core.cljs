@@ -5,7 +5,7 @@
 
 (defn generate-deck [& args]
   (into [:> Deck {:theme theme :transitionDuration 500}]
-   args))
+        args))
 
-(def presentation 
+(def presentation
   (generate-deck introduction))

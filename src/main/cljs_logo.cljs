@@ -8,10 +8,10 @@
 
 (defn start-rotation []
   (letfn [(rotate-loop [time]
-                       (swap! logo-angle-state inc)
-                       (go
-                         (<! (timeout 30))
-                         (.requestAnimationFrame js/window rotate-loop)))]
+            (swap! logo-angle-state inc)
+            (go
+              (<! (timeout 30))
+              (.requestAnimationFrame js/window rotate-loop)))]
     (.requestAnimationFrame js/window (fn [time] (rotate-loop time)))))
 
 (defn cljs-logo [state]

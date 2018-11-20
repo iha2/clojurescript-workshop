@@ -50,6 +50,3 @@
                    slide-two
                    slide-three
                    slide-four])
-
-
-
