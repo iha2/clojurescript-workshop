@@ -1,26 +1,25 @@
 (ns main.introduction_slides
   (:require
    [reagent.core :as r :refer [adapt-react-class]]
-   ["spectacle" :as spectacle :refer [Slide Text Appear List ListItem]]
-   [main.cljs_logo :as logo :refer [cljs-logo]]))
+   [main.cljs_logo :as logo :refer [cljs-logo rotate-logo]]
+   [cljs.core.async :refer [<! timeout]]
+   ["spectacle" :as spectacle :refer [Slide Text Appear List ListItem Image]])
+  (:require-macros [cljs.core.async :refer [go]]))
 
 (defn slide-one [key]
   ^{:key key}
   [:> Slide
    [:> Text {:textColor "white"} "Clojurescript For Beginners"]
-   cljs-logo])
+   (rotate-logo)])
 
 (defn slide-two [key]
   ^{:key key}
   [:> Slide
-   [:> Text {:textColor "white"} "Setting Up Your Environment"]
+   [:> Text {:textColor "white"} "Why ClojureScript?"]
    [:> List
-    [:> Appear
-     [:> ListItem
-      [:> Text {:textColor "white"} "Enter"]
-      [:> Text {:textColor "red"} "npm install -g shadow-cljs"]
-      [:> Text {:textColor "white"} "or"]
-      [:> Text {:textColor "red"} "yarn global add shadow-cljs"]]]]])
+    [:> Appear [:> ListItem "Functional Language"]]
+    [:> Appear [:> ListItem "Dynamically Typed"]]
+    [:> Appear [:> ListItem "Homoiconic (Code is Data)"]]]])
 
 (defn slide-three [key]
   ^{:key key}
@@ -34,15 +33,18 @@
      [:> ListItem
       {:textColor "white" :textSize "1.9rem"} "Install Bracket Pair Colorizer"]]]])
 
-
 (defn slide-four [key]
   ^{:key key}
   [:> Slide
-   [:> Text {:textColor "white"} "Why ClojureScript?"]
+   [:> Text {:textColor "white"} "Setting Up Your Environment"]
    [:> List
-    [:> Appear [:> ListItem "Functional Language"]]
-    [:> Appear [:> ListItem "Dynamically Typed"]]
-    [:> Appear [:> ListItem "Homo Iconic (Code is Data)"]]]])
+    [:> Appear
+     [:> ListItem
+      [:> Text {:textColor "white"} "Enter"]
+      [:> Text {:textColor "red"} "npm install -g shadow-cljs"]
+      [:> Text {:textColor "white"} "or"]
+      [:> Text {:textColor "red"} "yarn global add shadow-cljs"]]]]])
+
 
 (def introduction [slide-one
                    slide-two

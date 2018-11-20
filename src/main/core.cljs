@@ -4,6 +4,8 @@
             [main.introduction_slides :as intro :refer [introduction]]))
 
 (defn generate-deck [& args]
-  [:> Deck {:theme theme :transitionDuration 500} (map-indexed (fn [idx arg] (arg idx)) args)])
+  (into [:> Deck {:theme theme :transitionDuration 500}]
+   args))
 
-(def presentation (apply generate-deck introduction))
+(def presentation 
+  (generate-deck introduction))

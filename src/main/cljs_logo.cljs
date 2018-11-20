@@ -8,22 +8,19 @@
 
 (defn start-rotation []
   (letfn [(rotate-loop [time]
-            (swap! logo-angle-state inc)
-            (go
-              (<! (timeout 30))
-              (.requestAnimationFrame js/window rotate-loop)))]
+                       (swap! logo-angle-state inc)
+                       (go
+                         (<! (timeout 30))
+                         (.requestAnimationFrame js/window rotate-loop)))]
     (.requestAnimationFrame js/window (fn [time] (rotate-loop time)))))
 
-(defn rotatable-logo [angle]
+(defn cljs-logo [state]
   (let [image-style
-        {:transform (str "rotate(" angle "deg)")
+        {:transform (str "rotate(" @state "deg)")
          :margin "auto"}]
     [:div {:style image-style}
      [:> Image {:src "https://raw.githubusercontent.com/cljs/logo/master/cljs-white.png"
                 :height "10%"
                 :width "10%"}]]))
 
-(def cljs-logo (rotatable-logo @logo-angle-state))
-
-(defn animate-logo [] 
-  (start-rotation))
+(defn rotate-logo [] (cljs-logo logo-angle-state))
