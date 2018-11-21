@@ -4,8 +4,8 @@
             [main.introduction_slides :as intro :refer [introduction]]))
 
 (defn generate-deck [& args]
-  (into [:> Deck {:theme theme :transitionDuration 500}]
-        args))
+  ;; rotating logo currenly won't work with this way of calling the functions.
+  ;; Fix later
+  [:> Deck {:theme theme :transitionDuration 500} (doall (map-indexed #(%2 %1) args))])
 
-(def presentation
-  (generate-deck introduction))
+(def presentation (apply generate-deck introduction))
