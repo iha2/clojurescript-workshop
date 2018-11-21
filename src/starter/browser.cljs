@@ -1,8 +1,14 @@
-(ns starter.browser)
+(ns starter.browser
+  (:require [reagent.core :as r :refer [adapt-react-class]]))
+
+(defn app []
+  [:div {:style {:color "red"}} "Look! I made a simple ClojureScript application!"])
 
 ;; start is called by init and after code reloading finishes
 (defn ^:dev/after-load start []
-  (js/console.log "start"))
+  (js/console.log "start")
+  (r/render [app]
+            (.getElementById js/document "app")))
 
 (defn ^:export init []
   ;; init is called ONCE when the page loads
