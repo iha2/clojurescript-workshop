@@ -21,6 +21,15 @@
 
 ;; --- Strings, Keywords, Symbols" --- ;;
 
+;; A String in ClojureScript is a sim;le Javascript String
+(type "string")
+
+;; a Keyword is a simple type that are usually used as unique identifiers
+(type :keyword)
+
+;; Symobls are types in clojurescript that are interpreted are computable expressions
+(type 'symbol)
+
 ;; However they are not the same thing
 (= :__ (= "hello" :hello 'hello))
 
