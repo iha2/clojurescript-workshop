@@ -9,13 +9,13 @@
 (defn slide-one [key]
   ^{:key key}
   [:> Slide
-   [:> Text "Clojurescript For Beginners"]
+   [:> Text {:textColor "white"} "Clojurescript For Beginners"]
    (rotate-logo)])
 
 (defn slide-two [key]
   ^{:key key}
   [:> Slide
-   [:> Text "Why ClojureScript?"]
+   [:> Text {:textColor "white"} "Why ClojureScript?"]
    [:> List
     [:> Appear [:> ListItem "Functional Language"]]
     [:> Appear [:> ListItem "Dynamically Typed"]]
@@ -24,7 +24,7 @@
 (defn slide-three [key]
   ^{:key key}
   [:> Slide
-   [:> Text {:textColor "whited"} "Setting Up Your VS Code Environment"]
+   [:> Text {:textColor "white"} "Setting Up Your VS Code Environment"]
    [:> List
     [:> Appear
      [:> ListItem
